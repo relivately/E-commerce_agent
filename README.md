@@ -34,8 +34,8 @@
 - python-dotenv
 
 ---
-
-## 项目结构
+```
+项目架构
 E-commerce_agent/
 ├── agent/
 │   ├── db_agent.py              # 订单查询智能体
@@ -52,4 +52,43 @@ E-commerce_agent/
 ├── requirements.txt             # 依赖清单
 ├── index.html                   # 前端交互页面
 └── README.md                    # 项目说明
----
+```
+
+# 快速开始
+
+## 1. 安装依赖
+```bash
+pip install -r requirements.txt
+
+
+2. 配置环境变量（.env）
+在项目根目录下的.env 文件，填入以下内容：
+DASHSCOPE_API_KEY=你的通义千问API Key
+LANGCHAIN_API_KEY=你的LangSmith API Key
+
+
+3. 配置数据库（mysql_db.py）
+修改数据库连接信息：
+db = MySQLDatabase(
+    host="localhost",
+    port=3306,
+    user="root",
+    password="你的密码",
+    database="你的数据库名"
+)
+需提前创建表：orders、user、product（根据项目提供的数据库文件直接导入即可）
+
+
+4. 运行项目
+启动服务：
+python -m uvicorn app:app --reload
+
+启动成功后，直接双击打开项目中的 index.html 即可使用前端界面。
+
+
+使用示例
+订单查询：帮我查一下订单 123456
+商品查询：推荐一款手机
+数据统计：今天的销售额是多少
+普通咨询：什么时候发货
+
