@@ -52,4 +52,4 @@ E-commerce_agent/
 ├── requirements.txt             # 依赖清单
 ├── index.html                   # 前端交互页面
 └── README.md                    # 项目说明
-## 项目结构
+---
